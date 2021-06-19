@@ -10,7 +10,8 @@ app.register_blueprint(api, url_prefix='/api')
 def home():
     return render_template('home.html')
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
+def app():
     app.run(debug=True, port=os.getenv('PORT'))
-else:
-    print('Please run from main.py')
+#else:
+#    print('Please run from main.py')
