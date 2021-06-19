@@ -1,0 +1,4 @@
+osu-tools
+flask
+python-decouple
+Pillow
