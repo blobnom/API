@@ -2,3 +2,4 @@ Flask
 osu-tools
 Pillow
 python-decouple
+gunicorn
