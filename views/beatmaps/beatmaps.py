@@ -1,5 +1,3 @@
-import json
-
 from flask import Blueprint, jsonify, redirect, send_file
 from ..config import api_key
 from PIL import Image, ImageDraw, ImageFont
