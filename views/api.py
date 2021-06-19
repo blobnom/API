@@ -8,6 +8,8 @@ api.register_blueprint(beatmaps, url_prefix='/beatmaps')
 
 @api.route('/')
 def endpoints():
-    return f'<p>GET /api/user/{escape("<username>")}/card</p><br>' \
-        + f'<p>GET /api/user/{escape("<username>")}/scores/{escape("<map-id>")}<br>' \
-        + f'<p>GET /api/beatmaps/{escape("<map-id>")}/card<br>'
+    return f'<p>GET /api/user/{escape("<username>")}/card<br>' \
+        + f'GET /api/user/{escape("<username>")}/scores/map/{escape("<map-id>")}<br>' \
+        + f'GET /api/user/{escape("<username>")}/scores/recent<br>' \
+        + f'GET /api/user/{escape("<username>")}/scores/best<br>' \
+        + f'GET /api/beatmaps/{escape("<map-id>")}/card</p>'
