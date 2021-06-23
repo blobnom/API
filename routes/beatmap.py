@@ -151,7 +151,7 @@ class BeatmapScoreHandler(RequestHandler):
 
 		if index != 0:
 			scores = map.fetch_scores()
-                        if scores is None or index > len(scores):
+			if scores is None or index > len(scores):
 				self.set_status(502)
 				self.write({"error":"No scores found"})
 			score = scores[index-1]
