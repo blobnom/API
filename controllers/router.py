@@ -16,6 +16,6 @@ class MainHandler(RequestHandler):
 router = [
 	(r"/", MainHandler),
 	(r"/api/user/(.*)/card", user.UserCardHandler, dict(client=client)),
-	#(r"/api/beatmaps/(.*)/scores/(.*)", beatmap.BeatmapScoresHandler),
-	(r"/api/beatmaps/(.*)/card", beatmap.BeatmapCardHandler, dict(client=client))
+	(r"/api/beatmaps/(.*)/card", beatmap.BeatmapCardHandler, dict(client=client)),
+	(r"/api/beatmaps/(.*)/scores/(.*)", beatmap.BeatmapScoresHandler, dict(client=client))
 ]
