@@ -15,7 +15,7 @@ class BeatmapCardHandler(RequestHandler):
 		map = self.api.fetch_map(map_id=mapid)
 		if map is None:
 			self.set_status(404)
-			self.write({"error": "Beatmap not found: %s" % str(mapid)})
+			self.write({"error": "Beatmap not found: %s" % mapid})
 			return
 
 		if not os.path.isfile(f"static/beatmap_cards/{map.beatmap_id}.png"):
@@ -151,7 +151,7 @@ class BeatmapScoreHandler(RequestHandler):
 		map = self.api.fetch_map(map_id=mapid)
 		if map is None:
 			self.set_status(404)
-			self.write({"error": "Beatmap not found: %s" % str(mapid)})
+			self.write({"error": "Beatmap not found: %s" % mapid})
 			return
 
 		if index != 0:
