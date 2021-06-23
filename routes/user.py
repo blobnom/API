@@ -43,7 +43,7 @@ class UserCardHandler(RequestHandler):
 		c = Image.open(f"static/flags/{user.country}.png")
 		c = c.resize((36, 26))
 
-		fnt = ImageFont.truetype("arial.ttf", 24)
+		fnt = ImageFont.truetype("static/fonts/arial.ttf", 24)
 		d = ImageDraw.Draw(card)
 
 		# draw user name, avatar and country flag
