@@ -142,11 +142,41 @@ class BeatmapScoreHandler(RequestHandler):
 				self.set_status(502)
 				self.write({"error":"Please provide a number as play index"})
 				return
+
+		map = self.api.fetch_map(map_id=mapid)
+		if map is None:
+			self.set_status(404)
+			self.write({"error": "Beatmap not found: %s" % str(mapid)})
+			return
+
+		if index != 0:
+			scores = map.fetch_scores()
+                        if scores is None or index > len(scores):
+				self.set_status(502)
+				self.write({"error":"No scores found"})
+			score = scores[index-1]
+		else:
+			scores = map.fetch_scores(username=username)
+			if scores is None or index > len(scores):
+				self.set_status(502)
+				self.write({"error":"No scores found"})
+			score = scores[index-1]
 		
-		self.write({"index": index, "username": username})
+
+		if not os.path.isfile(f"static/beatmap_cards/{map.beatmap_id}.png"):
+			self.build_image(map, score)
+
+		image = self.get_image(map, score)
+
+		self.set_header("Content-Type", "image/png")
+		self.set_status(200)
+
+		self.write(image)
+		self.finish()
 
 	def build_image(self, map, score):
 		pass
 
 	def get_image(self, map, score):
-		pass
+		with open(f"static/beatmap_scores/{map.beatmap_id}:{score.user_id}:{score.timestamp}.png") as f:
+			return f.read()
