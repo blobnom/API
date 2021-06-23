@@ -127,3 +127,26 @@ class BeatmapCardHandler(RequestHandler):
 			return 'Loved'
 		else:
 			return 'Unknown'
+
+class BeatmapScoreHandler(RequestHandler):
+	def initialize(self, client):
+		self.api = client
+
+	def get(self, mapid, username):
+		index = 0
+		if username[0] == "#" and len(username) > 1:
+			index = username.split("#")[1]
+			if index.isdigit():
+				index = int(index)
+			else:
+				self.set_status(502)
+				self.write({"error":"Please provide a number as play index"})
+				return
+		
+		self.write({"index": index, "username": username})
+
+	def build_image(self, map, score):
+		pass
+
+	def get_image(self, map, score):
+		pass
