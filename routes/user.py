@@ -18,6 +18,8 @@ class UserCardHandler(RequestHandler):
 		image = self.build_image(user)
 		
 		self.set_header("Content-Type", "image/png")
+		self.set_status(200)
+
 		self.write(image)
 		self.finish()
 	
