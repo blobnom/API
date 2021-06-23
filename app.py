@@ -15,5 +15,5 @@ def make_app():
 if __name__ == "__main__":
 	app = make_app()
 	app.listen(config("PORT")
-	print("Listening on %s..." % config("port"))
+	print("Listening on {}...".format(config("port")))
 	IOLoop.current().start()
