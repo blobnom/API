@@ -1,6 +1,8 @@
 # API
 Just a random API that generates images for various osu things such as user profiles, beatmaps and scores.
 
+**Try it out [here](https://blobnom.herokuapp.com/)**
+
 If you wanna use this yourself even tho it's shit then follow these steps:
 - Download the code
 - Make a file called `.env` and enter your [osu!api key](https://osu.ppy.sh/p/api/) as `OSU_API_KEY`
