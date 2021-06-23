@@ -66,9 +66,9 @@ class BeatmapCardHandler(RequestHandler):
 		card.paste(bg, (0, 0))
 		card.paste(avatar, (927, 329))
 
-		fnt = ImageFont.truetype("arial.ttf", 24)
-		fnt_sml = ImageFont.truetype("arial.ttf", 12)
-		fnt_big = ImageFont.truetype("arial.ttf", 40)
+		fnt = ImageFont.truetype("static/fonts/arial.ttf", 24)
+		fnt_sml = ImageFont.truetype("static/fonts/arial.ttf", 12)
+		fnt_big = ImageFont.truetype("static/fonts/arial.ttf", 40)
 		d = ImageDraw.Draw(card)
 
 		d.text((5, 255), text=title, font=fnt_big, fill=(0, 0, 0))
