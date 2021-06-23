@@ -159,14 +159,17 @@ class BeatmapScoreHandler(RequestHandler):
 			if scores is None or index > len(scores):
 				self.set_status(502)
 				self.write({"error":"No scores found"})
+				return
+
 			score = scores[index-1]
 		else:
 			scores = map.fetch_scores(username=username)
 			if scores is None:
 				self.set_status(502)
 				self.write({"error":"No scores found"})
-			score = scores
-			print(score)
+				return
+
+			score = scores[0]
 
 		if not os.path.isfile(f"static/beatmap_cards/{map.beatmap_id}.png"):
 			self.build_image(map, score)
