@@ -134,8 +134,8 @@ class BeatmapScoreHandler(RequestHandler):
 
 	def get(self, mapid, username):
 		index = 0
-		if username[0] == "~" and len(username) > 1:
-			index = username.split("~")[1]
+		if username[0] == "$" and len(username) > 1:
+			index = username.split("$")[1]
 			if index.isdigit():
 				index = int(index)
 			else:
