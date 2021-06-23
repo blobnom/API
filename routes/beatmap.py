@@ -24,6 +24,8 @@ class BeatmapCardHandler(RequestHandler):
 		image = self.get_image(map)
 
 		self.set_header("Content-Type", "image/png")
+		self.set_status(200)
+
 		self.write(image)
 		self.finish()
 
