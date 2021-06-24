@@ -9,3 +9,5 @@ If you wanna use this yourself even tho it's shit then follow these steps:
 - Install all the dependencies `python -m pip install -r requirements.txt`
 - If you're not using heroku, change the port in the `app.py` file to something of your choice
 - Run with `python app.py`
+
+If you have any questions or suggestions, open an issue and i'll look into it :D
