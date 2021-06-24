@@ -189,7 +189,7 @@ class BeatmapScoreHandler(RequestHandler):
 		points = "Score: {:,}".format(score.score)
 		combo = "Combo: {:,}".format(score.max_combo)
 		accuracy = "Accuracy: {:.2f}%".format(score.accuracy_dec*100)
-		mods = "Mods: {}".format(scores.mods)
+		mods = "Mods: {}".format(score.mods)
 		title = "{} [{}]".format(map.song_title, map.difficulty_name)
 		artist = "{}".format(map.artist)
 		player = "{}".format(u.username)
