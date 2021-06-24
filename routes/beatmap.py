@@ -233,7 +233,7 @@ class BeatmapScoreHandler(RequestHandler):
 		d.text((931, 457), text="Played by", font=fnt, fill=(0, 0, 0))
 
 		# score stats
-		d.text((310, 358), text=score, font=fnt, fill=(0, 0, 0))
+		d.text((310, 358), text=points, font=fnt, fill=(0, 0, 0))
 		d.text((310, 387), text=combo, font=fnt, fill=(0, 0, 0))
 		d.text((310, 416), text=accuracy, font=fnt, fill=(0, 0, 0))
 		d.text((310, 445), text=mods, font=fnt, fill=(0, 0, 0))
