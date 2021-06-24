@@ -171,7 +171,9 @@ class BeatmapScoreHandler(RequestHandler):
 
 			score = scores[0]
 
-		self.build_image(map, score)
+		if not os.path.isfile(f"static/beatmap_scores/{map.beatmap_id}:{score.user_id}:{score.score_id}.png"):
+			self.build_image(map, score)
+		
 		image = self.get_image(map, score)
 
 		self.set_header("Content-Type", "image/png")
@@ -243,8 +245,8 @@ class BeatmapScoreHandler(RequestHandler):
 		d.text((605, 416), text=pp_98, font=fnt, fill=(0, 0, 0))
 		d.text((605, 445), text=pp_99, font=fnt, fill=(0, 0, 0))
 		d.text((605, 474), text=pp_100, font=fnt, fill=(0, 0, 0))
-		card.save(f"static/beatmap_scores/{map.beatmap_id}_{score.user_id}.png")
+		card.save(f"static/beatmap_scores/{map.beatmap_id}:{score.user_id}:{score.score_id}.png")
 
 	def get_image(self, map, score):
-		with open(f"static/beatmap_scores/{map.beatmap_id}_{score.user_id}.png") as f:
+		with open(f"static/beatmap_scores/{map.beatmap_id}:{score.user_id}:{score.score_id}.png", "rb") as f:
 			return f.read()
