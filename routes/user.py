@@ -94,8 +94,8 @@ class UserRecentScoreHandler(RequestHandler):
 			self.write({"error": "No scores found"})
 			return
 
-		self.build_image(map, scores[0])
-		image = self.get_image(map, scores[0])
+		self.build_image(u, scores[0])
+		image = self.get_image(scores[0])
 
 		self.set_header("Content-Type", "image/png")
 		self.set_status(200)
@@ -173,7 +173,7 @@ class UserRecentScoreHandler(RequestHandler):
 		d.text((605, 474), text=pp_100, font=fnt, fill=(0, 0, 0))
 		card.save(f"static/scores_recent/{score.user_id}.png")
 
-	def get_image(self, map, score):
+	def get_image(self, score):
 		with open(f"static/scores_recent/{score.user_id}.png", "rb") as f:
 			return f.read()
 
@@ -198,8 +198,8 @@ class UserTopScoreHandler(RequestHandler):
 			self.write({"error": "No scores found"})
 			return
 
-		self.build_image(map, scores[0])
-		image = self.get_image(map, scores[0])
+		self.build_image(u, scores[0])
+		image = self.get_image(scores[0])
 
 		self.set_header("Content-Type", "image/png")
 		self.set_status(200)
@@ -277,6 +277,6 @@ class UserTopScoreHandler(RequestHandler):
 		d.text((605, 474), text=pp_100, font=fnt, fill=(0, 0, 0))
 		card.save(f"static/scores_top/{score.user_id}.png")
 
-	def get_image(self, map, score):
+	def get_image(self, score):
 		with open(f"static/scores_top/{score.user_id}.png", "rb") as f:
 			return f.read()
