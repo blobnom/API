@@ -106,7 +106,9 @@ class UserRecentScoreHandler(RequestHandler):
 	def build_image(self, u, score):
 		map = self.api.fetch_map(map_id=score.map_id)
 
-		pp = "{:,.2f}pp".format(score.pp)
+		pp = "{:,.2f}pp".format(
+			Oppai.calculate_pp_from_url(map.download_url, mods=score.mods.value, accuracy=score.accuracy_dec*100, max_combo=score.max_combo, misses=score.misses)
+		)
 		points = "Score: {:,}".format(score.score)
 		combo = "Combo: {:,}".format(score.max_combo)
 		accuracy = "Accuracy: {:.2f}%".format(score.accuracy_dec * 100)
