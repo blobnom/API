@@ -104,7 +104,7 @@ class UserRecentScoreHandler(RequestHandler):
 		self.finish()
 
 	def build_image(self, u, score):
-		map = score.fetch_map()
+		map = self.api.fetch_map(map_id=score.map_id)
 
 		pp = "{:,.2f}pp".format(score.pp)
 		points = "Score: {:,}".format(score.score)
