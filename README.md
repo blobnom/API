@@ -5,8 +5,8 @@ Just an API that generates images for various osu statistics such as user profil
 
 If you wanna use this yourself even tho it's shit then follow these steps:
 - Download the code
-- Make a file called `.env` and enter your [osu!api key](https://osu.ppy.sh/p/api/) as `OSU_API_KEY`
-- Install all the dependencies `python -m pip install -r requirements.txt`
+- Store your [osu!api key](https://osu.ppy.sh/p/api/) in an environment variable called `OSU_API_KEY`
+- Install all the dependencies using `python -m pip install -r requirements.txt`
 - If you're not using heroku, change the port in the `app.py` file to something of your choice
 - Run with `python app.py`
 
