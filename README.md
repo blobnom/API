@@ -1,5 +1,5 @@
 # API
-Just a random API that generates images for various osu things such as user profiles, beatmaps and scores.
+Just an API that generates images for various osu statistics such as user profiles, beatmaps and scores.
 
 **Try it out [here](https://blobnom.herokuapp.com/)**
 
