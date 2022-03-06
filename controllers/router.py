@@ -8,7 +8,7 @@ client = OsuClient(config('OSU_API_KEY'))
 class MainHandler(RequestHandler):
 	def get(self):
 		self.write("<p>" \
-		+ "GET /api/user/[username]card" + "<br>" \
+		+ "GET /api/user/[username]/card" + "<br>" \
 		+ "GET /api/user/[username]/scores/recent" + "<br>" \
 		+ "GET /api/user/[username]/scores/top" + "<br><br>" \
 		+ "GET /api/beatmaps/[map-id]/scores/[username]|~[leaderboard-place]" + "<br>"\
